@@ -1,0 +1,26 @@
+[
+   {
+      "name":"Hollis MacGyver 1",
+      "email":"Yazmin.Heidenreich97@gmail.com",
+      "jobTitle":"Direct Markets Assistant",
+      "active":true,
+      "phoneNumber":"603-607-3241",
+      "date":"2015-02-12T10:40:52.977Z"
+   },
+   {
+      "name":"Axel McLaughlin",
+      "email":"Deon_Heaney@gmail.com",
+      "jobTitle":"Forward Mobility Architect",
+      "active":false,
+      "phoneNumber":"983-639-0705",
+      "date":"2015-03-01T02:28:26.030Z"
+   },
+   {
+      "name":"Ricardo Botsford",
+      "email":"Melisa73@yahoo.com",
+      "jobTitle":"Direct Quality Consultant",
+      "active":true,
+      "phoneNumber":"408-082-9480",
+      "date":"2015-01-31T03:41:54.611Z"
+   }
+]

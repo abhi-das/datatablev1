@@ -1,0 +1,109 @@
+<div style="margin: auto; max-width: 1000px; margin-top:50px">
+    <data-table id="films-grid"
+        headerTitle="Films"
+        [items]="films"
+        [itemCount]="filmCount"
+        (reload)="reloadFilms($event)"
+
+        [limit]="8"
+        [sortBy]="'rating'"
+        [sortAsc]="false"
+
+        [selectColumn]="false"
+        [multiSelect]="false"
+        [substituteRows]="false"
+        [expandableRows]="true"
+        [translations]="translations"
+        [indexColumnHeader]="'#'"
+        [selectOnRowClick]="false"
+        (cellClick)="tes($event)"
+        [pagination]="false"
+        >
+        
+        <data-table-column
+            [property]="'title'"
+            [header]="'Title'"
+            [sortable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'year'"
+            [header]="'Release year'"
+            [sortable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'rating'"
+            [header]="'Rating'"
+            [sortable]="true"
+            [cellColors]="cellColor">
+        </data-table-column>
+        <data-table-column
+            [property]="'director'"
+            [header]="'Director'">
+        </data-table-column>
+
+        <ng-template #dataTableExpand >
+                <h4>Employees</h4>
+                <div class="loading" *ngIf="viz">
+                    <div class="box"></div>                    
+                </div>
+                <data-table [items]="items"
+                    [itemCount]="itemCount"
+                    [showReloading] = "true"
+                    [selectColumn]="false"
+                    [multiSelect]="false"
+                    [substituteRows]="false"
+                    [pagination]="false"
+                    [sortBy]="jobTitle"
+                    [sortAsc]="true"
+                    >
+                    <data-table-column
+                        [property]="'name'"
+                        [header]="'Name'"
+                        [sortable]="true"
+                        [resizable]="true">
+                    </data-table-column>
+                    <data-table-column
+                        [property]="'date'"
+                        [header]="'Date'"
+                        [sortable]="true">
+                        <ng-template #dataTableCell let-item="item">
+                            <span>{{item.date | date:'yyyy-MM-dd'}}</span>
+                        </ng-template>
+                    </data-table-column>
+                    <data-table-column
+                        property="phoneNumber"
+                        header="Phone number"
+                        width="150px">
+                    </data-table-column>
+                    <data-table-column
+                        [property]="'jobTitle'"
+                        [header]="'Job title'"
+                        [visible]="false">
+                    </data-table-column>
+                    <!-- <data-table-column
+                        [property]="'active'"
+                        [header]="'Active'"
+                        [width]="100"
+                        [resizable]="true">
+                        <ng-template #dataTableHeader let-item="item[0]">
+                            <span style="color: rgb(232, 0, 0)">Active</span>
+                        </ng-template>
+                        <ng-template #dataTableCell let-item="item[0]">
+                            <span style="color: grey">
+                            <span class="glyphicon glyphicon-ok" *ngIf="item.active"></span>
+                            <span class="glyphicon glyphicon-remove" *ngIf="!item.active"></span>
+                            </span>
+                        </ng-template>
+                    </data-table-column> -->
+                </data-table>
+
+        </ng-template>
+
+    </data-table>
+
+    <!-- <div style="margin-top: 10px">
+        <b>Selected:</b>
+        <span *ngIf="filmsTable.selectedRow == null"><i>No item selected</i></span>
+        <span [textContent]="filmsTable.selectedRow && filmsTable.selectedRow.item.title"></span>
+    </div> -->
+</div>
